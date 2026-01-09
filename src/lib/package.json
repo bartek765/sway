@@ -1,0 +1,32 @@
+{
+  "name": "@sway/forms",
+  "version": "1.0.0",
+  "description": "Professional Angular multi-step form library with smooth transitions and automatic validation",
+  "keywords": [
+    "angular",
+    "forms",
+    "multi-step",
+    "wizard",
+    "stepper",
+    "view-transitions",
+    "signals",
+    "validation"
+  ],
+  "author": "Bartosz Kędra",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bartek765/sway.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bartek765/sway/issues"
+  },
+  "homepage": "https://github.com/bartek765/sway#readme",
+  "peerDependencies": {
+    "@angular/common": "^21.0.0",
+    "@angular/core": "^21.0.0",
+    "@angular/forms": "^21.0.0"
+  },
+  "sideEffects": false
+}
+

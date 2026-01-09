@@ -1,12 +1,17 @@
 {
   "name": "sway",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:lib": "ng-packagr -p src/lib/ng-package.json",
+    "build:watch": "ng-packagr -p src/lib/ng-package.json --watch",
+    "build:demo": "ng build",
+    "build:all": "npm run build:lib && npm run build:demo",
+    "pack": "cd dist/sway && npm pack"
   },
   "prettier": {
     "printWidth": 100,
@@ -20,7 +25,6 @@
       }
     ]
   },
-  "private": true,
   "packageManager": "npm@10.8.2",
   "dependencies": {
     "@angular/common": "^21.0.0",
@@ -37,7 +41,9 @@
     "@angular/cli": "^21.0.5",
     "@angular/compiler-cli": "^21.0.0",
     "jsdom": "^27.1.0",
+    "ng-packagr": "^21.0.1",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
-  }
+  },
+  "description": "Professional Angular multi-step form library"
 }

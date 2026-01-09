@@ -1,59 +1,52 @@
 # Sway
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.5.
+An opinionated multi-step form component for Angular. Built with Signals and View Transitions API.
 
-## Development server
+## Usage
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+To start using the library, install it in your project:
 
 ```bash
-ng generate component component-name
+npm install @sway/forms
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Add `SwayFormComponent` and `SwayStepDirective` to your component imports. Then, wrap your steps with `<sway-form>`.
 
-```bash
-ng generate --help
+```typescript
+import { SwayFormComponent, SwayStepDirective } from '@sway/forms';
+
+@Component({
+  selector: 'app-example',
+  standalone: true,
+  imports: [SwayFormComponent, SwayStepDirective, FormsModule],
+  template: `
+    <sway-form (formSubmit)="onSubmit()">
+      
+      <div *swayStep="'step1'; title: 'Info'">
+        <form #f="ngForm">
+          <input name="email" [(ngModel)]="email" required email />
+        </form>
+      </div>
+
+      <div *swayStep="'step2'; title: 'Review'">
+        <p>Reviewing: {{ email }}</p>
+      </div>
+
+    </sway-form>
+  `
+})
+export class App {}
 ```
 
-## Building
+## Features
 
-To build the project run:
+- **Signals-powered**: Reactive state management with zero RxJS boilerplate.
 
-```bash
-ng build
-```
+- **View Transitions**: Built-in, buttery-smooth morphing between steps.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- **Auto-validation**: Automatically detects Angular forms and blocks navigation if invalid.
 
-## Running unit tests
+- **Direction-aware**: Natural sliding animations based on navigation flow.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+- **Shake feedback**: Premium visual cues when a user attempts to proceed with errors.
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
