@@ -1,3 +1,5 @@
+https://github.com/user-attachments/assets/6dd902c9-7a8b-4c22-a4a0-bb8889af761a
+
 # Sway
 
 An opinionated multi-step form component for Angular. Built with Signals and View Transitions API.
