@@ -52,3 +52,10 @@ export class App {}
 
 - **Shake feedback**: Premium visual cues when a user attempts to proceed with errors.
 
+## Use Cases
+
+- **User Onboarding**: Create engaging, step-by-step welcome flows for new users.
+
+- **Dynamic Surveys**: Build interactive questionnaires that feel fast and responsive.
+  
+- **Multi-step Registrations**: Increase conversion rates by simplifying long registration forms.
