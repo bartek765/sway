@@ -52,6 +52,8 @@ export class App {}
 
 - **Shake feedback**: Premium visual cues when a user attempts to proceed with errors.
 
+- **Keyboard Navigation**: Full support for Enter (Next/Submit) and Arrow Keys (Step switching).
+
 ## Use Cases
 
 - **User Onboarding**: Create engaging, step-by-step welcome flows for new users.
