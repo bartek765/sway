@@ -6,6 +6,7 @@ import {
   effect,
   ElementRef,
   EventEmitter,
+  HostListener,
   inject,
   Input,
   OnDestroy,
@@ -259,6 +260,29 @@ export class SwayFormComponent implements AfterContentInit, OnDestroy {
 
   ngOnDestroy() {
     this.resizeObserver?.disconnect();
+  }
+
+  @HostListener('window:keydown', ['$event'])
+  handleKeyboardNavigation(event: KeyboardEvent) {
+    const activeElement = document.activeElement as HTMLElement;
+    if (activeElement?.tagName === 'TEXTAREA') {
+      return;
+    }
+
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      this.next();
+    } else if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      this.previous();
+    } else if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      if (this.hasNext()) {
+        this.next();
+      } else {
+        this.submit();
+      }
+    }
   }
 
   private initializeSteps() {
