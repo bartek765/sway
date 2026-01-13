@@ -214,6 +214,14 @@ import {SwayFormConfig, SwayNavigationEvent} from '../models/sway.types';
         transform: translateX(8px);
       }
     }
+
+    .sway-form input:focus-visible,
+    .sway-form textarea:focus-visible,
+    .sway-form button:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2), 0 0 15px rgba(59, 130, 246, 0.5);
+      transition: box-shadow 0.2s ease-in-out;
+    }
   `]
 })
 export class SwayFormComponent implements AfterContentInit, OnDestroy {

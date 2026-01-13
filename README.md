@@ -54,6 +54,8 @@ export class App {}
 
 - **Keyboard Navigation**: Full support for Enter (Next/Submit) and Arrow Keys (Step switching).
 
+- **Accessible Focus States**: Custom neon focus styles for enhanced visibility and accessibility.
+
 ## Use Cases
 
 - **User Onboarding**: Create engaging, step-by-step welcome flows for new users.
